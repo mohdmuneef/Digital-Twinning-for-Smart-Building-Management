@@ -61,7 +61,7 @@ This project implements a **Digital Twin** for monitoring and predicting buildin
 
 ### **1. Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/digital-twin-smart-building.git
+git clone https://github.com/mohdmuneef/digital-twin-smart-building.git
 cd digital-twin-smart-building
 ```
 
