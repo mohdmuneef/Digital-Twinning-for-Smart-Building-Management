@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Twin - Smart Building Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+        font-family: sans-serif; 
+        margin: 0;
+        }
+        h1, h3 {
+        margin-bottom: 1rem; 
+        }
+        .navbar {
+        background-color: #000;
+        color: #fff; 
+        }
+        .navbar-text {
+        color: #fff; 
+        margin: 0 1rem;
+        }
+        .form-group {
+        margin-bottom: 1.5rem; 
+        }
+        .form-control {
+        border-radius: 0.3rem; 
+        }
+        #plot {
+        width: 100%;
+        height: 400px; 
+        }
+        .navbar-light .bg-light {
+        background-color: #f8f9fa; 
+        }
+        h1 {
+        color: #343a40; 
+        }
+        .btn-primary {
+        background-color: #28a745; 
+        border-color: #28a745; 
+        }
+        .container {
+        padding: 2rem 0; 
+        margin-bottom: 50px !important;
+        }
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <h3 class="navbar-text">Mini Project on</h3>
+        <h1 class="navbar-text">Digital Twin - Smart Building Management</h1>
+    </nav>
+    <div class="container">
+        <form method="post">
+            <div class="form-group">
+                <label for="plot_type">Choose Data to Display:</label>
+                <select class="form-control" id="plot_type" name="plot_type">
+                    <option value="Temperature and Humidity" {% if custom_plot == 'Temperature and Humidity' %}selected{% endif %}>Temperature and Humidity</option>
+                    <option value="Energy Consumption" {% if custom_plot == 'Energy Consumption' %}selected{% endif %}>Energy Consumption</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+        <div id="plot" class="mt-4">
+            {{ plot_div|safe }}
+        </div>
+    </div>
+    <footer>
+        <div class="fb-container">
+            <h5>ThankYou</h5>
+            <p>Developed by: Mohd Muneef</p>
+        </div>
+    </footer>
+</body>
+</html>
